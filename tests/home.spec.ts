@@ -141,8 +141,8 @@ test.describe('Home', () => {
         // const navLinks = page.locator('#zak-primary-menu li[id*=menu]').nth(3);
         // const navLinks = await homePage.navLinks.nth(3); - delete because of we added to the constructor
     
-        // verify nav link text of number 3
-        expect(await homePage.getNavLinksText()).toEqual(expectedLinks[3]);
+        // verify nav link text of number 3 - delete
+        expect(await homePage.getNavLinksText()).toEqual(expectedLinks);
     })
     
 })

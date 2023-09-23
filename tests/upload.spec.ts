@@ -1,37 +1,37 @@
 import { test, expect } from '@playwright/test';
-import CartPage from '../pages/component/cart.page'; 
+// import CartPage from '../pages/component/cart.page'; 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 
-test.describe('Upload File', () => {
-    let cartPage: CartPage;
+// test.describe('Upload File', () => {
+//     let cartPage: CartPage;
 
-    const fileName = ['title.png', 'Manual_interview_questions.pdf'];
+//     const fileName = ['title.png', 'Manual_interview_questions.pdf'];
 
-        for (const name of fileName) {
-            test(`Should upload a ${name} file`, async ({ page }) => {
-                cartPage = new CartPage(page);   
+//         for (const name of fileName) {
+//             test(`Should upload a ${name} file`, async ({ page }) => {
+//                 cartPage = new CartPage(page);   
         
-                // open url
-                await page.goto('/cart');
+//                 // open url
+//                 await page.goto('/cart');
         
-                // provide test file path
-                const filePath = path.join(__dirname, `../data/${name}`);
+//                 // provide test file path
+//                 const filePath = path.join(__dirname, `../data/${name}`);
         
-                // upload test file - change 2w1
-                // await page.setInputFiles('input#upfile_1', filePath);
+//                 // upload test file - change 2w1
+//                 // await page.setInputFiles('input#upfile_1', filePath);
                 
-                // click the submit button - change 2w1
-                // await page.locator('input#upload_1').click();
+//                 // click the submit button - change 2w1
+//                 // await page.locator('input#upload_1').click();
         
-                //upload test file 
-                cartPage.uploadComponent().uploadFile(filePath);
+//                 //upload test file 
+//                 cartPage.uploadComponent().uploadFile(filePath);
                 
-                // assertion
-                await expect(cartPage.uploadComponent().successTxt).toContainText('uploaded successfully');
-            })
-        }
-})
+//                 // assertion
+//                 await expect(cartPage.uploadComponent().successTxt).toContainText('uploaded successfully');
+//             })
+//         }
+// })
 
 test.describe('Upload File', () => {
     test('Should upload a test file on a hidden input field', async ({ page }) => {

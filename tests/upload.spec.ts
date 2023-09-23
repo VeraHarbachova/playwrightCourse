@@ -76,7 +76,7 @@ test.describe('Upload File', () => {
         await page.locator('input#upload_1').click();
 
         // hardcoded sleep - WRONG WAY!
-        await page.waitForTimeout(5000);
+        await page.waitForTimeout(10000);
         
         // assertion
         await expect(page.locator('#wfu_messageblock_header_1_label_1')).toContainText('uploaded successfully');
